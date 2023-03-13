@@ -11,6 +11,7 @@ namespace CalculatorConsoleApp
         static void Main(string[] args)
         {
             int pilih;
+            menu:
             Console.Title = "Aplikasi Calculator";
 
             Console.WriteLine("Pilih menu calculator\n\n1. Penambahan\n2. Pengurangan\n3. Perkalian\n4. Pembagian");
@@ -53,7 +54,13 @@ namespace CalculatorConsoleApp
                 int b = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Hasil Pembagian {0} / {1} = {2}", a, b, Pembagian(a, b));
             }
-            
+            else
+            {
+                Console.Write("Pilihan anda tidak tersedia");
+                Console.WriteLine("\nTekan sembarang key untuk keluar");
+                Console.ReadKey();
+                goto menu;
+            }
             Console.WriteLine("\nTekan sembarang key untuk keluar");
             Console.ReadKey();
         }
